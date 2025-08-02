@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Dashboard ({{ session.role|capitalize }})</h3>
+
+{% if session.role == 'enduser' %}
+    <a href="/create_ticket" class="btn btn-success mb-3">+ Create Ticket</a>
+{% endif %}
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Subject</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Created</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ticket in tickets %}
+            <tr>
+                <td>{{ ticket[0] }}</td>
+                <td>{{ ticket[2] }}</td>
+                <td>{{ ticket[4] }}</td>
+                <td>{{ ticket[5] }}</td>
+                <td>{{ ticket[6] }}</td>
+                <td>
+                    <a href="/ticket/{{ ticket[0] }}" class="btn btn-sm btn-info">View</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
