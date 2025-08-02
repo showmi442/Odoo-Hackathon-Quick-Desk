@@ -70,7 +70,7 @@ Deployment: Localhost (Flask debug=True)
 1. Clone the repo
 bash
 CopyEdit
-git clone https://github.com/yourusername/oddo-helpdesk.git
+git clone https://github.com/showmi442/Odoo-Hackathon-Quick-Desk
 cd oddo-helpdesk
 2. Setup virtual environment (optional but recommended)
 bash
